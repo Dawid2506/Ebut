@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+}
+
+.mainContainer {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.typeContainer {
+    margin-left: 1em;
+    width: 15%;
+}
+
+.productContainer{
+    margin-left: 1em;
+}

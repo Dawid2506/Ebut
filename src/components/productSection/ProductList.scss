@@ -1,0 +1,12 @@
+.items{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 250px;
+}
+
+.itemsRow{
+    border-bottom: 1px solid #c1c1c1;
+    width: 100%;
+    position: absolute;
+}
+

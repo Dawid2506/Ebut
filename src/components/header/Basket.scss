@@ -1,0 +1,40 @@
+.basketButton{
+    color: white;
+    background-color: #222;
+    width: 11em;
+    height: 3.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3em;
+    &:hover{
+        background-color: #323232;
+    }
+    p{
+        padding-left: 1em;
+    }
+    position: relative;
+}
+
+.basketButton:hover .basketWindow{
+    display: flex;
+}
+
+.basketWindow{
+    text-align: center;
+    color: black;
+    font-size: small;
+    font-weight: 400;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #c8c8c8;
+    border-top: 4px solid #c8c8c8;
+    background-color: white;
+    min-width: 230px;
+    min-height: 50px;
+    border-radius: 4px;
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+}

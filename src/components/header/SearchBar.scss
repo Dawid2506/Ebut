@@ -1,0 +1,29 @@
+.searchBar{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.textField{
+    font-weight: 200;
+    border: 1px solid #8a8a8a;
+    padding-left: 10px;
+    width: 25vw;
+    min-width: 200px;
+    height: 40px;
+}
+
+.button{
+    color: white;
+    background-color: #8a8a8a;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.button:hover{
+    background-color: black;
+}

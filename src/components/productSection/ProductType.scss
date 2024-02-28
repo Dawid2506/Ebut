@@ -1,0 +1,35 @@
+// .productType{   
+
+// }
+
+.typeGoBack{
+    height: 3em;
+    display: flex;
+    align-items: center;
+    margin-top: 1em;
+    left: 0;
+    p{
+        display: flex;
+    }
+}
+
+.lessThan{
+    transform: rotate(-90deg);
+}
+
+.line{
+    width: 100%;
+    height: 0;
+    border-bottom: 1px solid #c1c1c1;
+}
+
+.typeList p{
+    display: flex;
+    align-items: center;
+}
+
+.typeAmount{
+    padding-left: 0.5em;
+    font-size: 12px;
+    color: #c1c1c1;
+}
