@@ -8,10 +8,12 @@ function SpecificItemPage() {
   return (
     <div>
       <Header />
-      <div className='specificItemPageContatiner'>
-        <ImageVerticallyList />
-        <MainImage />
-        <SpecificInformation />
+      <div className='specificItemPageCC'>
+        <div className='specificItemPageContatiner'>
+          <ImageVerticallyList />
+          <MainImage />
+          <SpecificInformation />
+        </div>
       </div>
     </div>
   );

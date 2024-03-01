@@ -1,7 +1,10 @@
 .specificItemPageContatiner{
-    width: 100%;
+    width: 1200px;
+    display: flex;
+    padding-top: 30px;
+}
+
+.specificItemPageCC{
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding-top: 30px;
 }
