@@ -1,0 +1,11 @@
+.mainImageContainer{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+}
+
+.bigImage:hover {
+    transform: scale(2); /* Przybliża obraz o 20% */
+    transform-origin: 90% 20%;
+}

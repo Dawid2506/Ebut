@@ -2,7 +2,7 @@ import './FavoriteButton.scss';
 import { CiHeart } from "react-icons/ci";
 import React, { useState } from 'react';
 
-const FavoriteButton = () => {
+const FavoriteButton = ({ onClick }) => {
     const [isFavorite, setIsFavorite] = useState(false);
 
     const SetFavorite = () => {
@@ -10,7 +10,7 @@ const FavoriteButton = () => {
     }
 
     return (
-        <div className={`favoriteButton ${isFavorite ? 'favorite' : ''}`} onClick={SetFavorite}>
+        <div className={`favoriteButton ${isFavorite ? 'favorite' : ''}`} onClick={(event) => { onClick(event); SetFavorite(); }}>
             <CiHeart className='heartIcon'/>
         </div>
     );

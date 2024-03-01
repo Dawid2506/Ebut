@@ -1,10 +1,18 @@
 import Header from '../header/Header.js';
-import '../../App.scss';
+import ImageVerticallyList from './ImageVerticallyList.js';
+import MainImage from './MainImage.js';
+import SpecificInformation from './SpecificInformation.js';
+import './SpecificItemPage.scss';
 
 function SpecificItemPage() {
   return (
     <div>
       <Header />
+      <div className='specificItemPageContatiner'>
+        <ImageVerticallyList />
+        <MainImage />
+        <SpecificInformation />
+      </div>
     </div>
   );
 }
