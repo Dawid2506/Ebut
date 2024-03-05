@@ -28,12 +28,17 @@ const Item = (props) => {
         navigate('/specificItemPage');
     };
 
+    // Dodajemy funkcję, która zatrzymuje propagację zdarzenia kliknięcia
+    const handleFavoriteClick = (event) => {
+        event.stopPropagation();
+    };
+
     return (
         <div className='itemContainer' onClick={navigateToSubPage}>
             <div className={`item ${isHovered ? 'hovered' : ''}`}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}>
-                <FavoriteButton />
+                <FavoriteButton onClick={handleFavoriteClick} />
                 {renderImg()}
                 <div className='itemData'>
                     <p className='brand'>{props.brand}</p>

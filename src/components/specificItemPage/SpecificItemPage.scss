@@ -1,0 +1,18 @@
+.specificItemPageContatiner {
+    width: 1200px;
+    display: flex;
+    padding-top: 30px;
+}
+
+.specificItemPageCC {
+    display: flex;
+    justify-content: center;
+}
+
+.specificItemPage {
+    filter: blur(0);
+}
+
+.blurred {
+    filter: blur(2px);
+}

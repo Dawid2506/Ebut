@@ -1,0 +1,15 @@
+.mainImageContainer{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    margin-left: 8em;
+}
+
+.bigImage{
+    transform-origin: 90% 20%;
+}
+
+.bigImage:hover {
+    transform: scale(2);
+}

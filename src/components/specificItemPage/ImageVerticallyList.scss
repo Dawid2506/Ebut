@@ -1,0 +1,23 @@
+.list{
+    width: 85px;
+    height: 280px;
+    overflow: auto;
+}
+
+.list::-webkit-scrollbar {
+    display: none;
+}
+
+.list {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.particularImageFromList{
+    padding-bottom: 10px;
+    border-radius: 4px; 
+}
+
+.particularImageFromList:hover{
+    border: 1px solid #ccc;
+} 

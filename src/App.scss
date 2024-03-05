@@ -3,16 +3,16 @@ body {
 }
 
 .mainContainer {
+    width: 100%;
     display: flex;
-    justify-content: flex-start;
-    position: relative;
+    justify-content: center;
 }
 
 .typeContainer {
-    margin-left: 1em;
     width: 15%;
 }
 
-.productContainer{
-    margin-left: 1em;
+.mainApp{
+    display: flex;
+    justify-content: center;
 }

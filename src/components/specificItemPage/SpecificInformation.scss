@@ -1,0 +1,32 @@
+.specificInfoContainer{
+    width: 400px;
+    height: 400px;  
+    margin-left: 10em;
+}
+
+.specBrand{
+    font-weight: 400;
+    font-size: 28px;
+}
+
+.specDescription{
+    color: #8a8a8a; 
+    font-weight: 300;
+}
+
+.specPrice{
+    font-family: "Open Sans", sans-serif;   
+    font-weight: 400;
+    margin-top: 1em;
+}
+
+.sizeTable{
+    height: 3em;
+    width: 8em;
+    display: flex;
+    align-items: center;
+}
+
+.sizeTable:hover{
+    background-color: #e8e8e8;
+}
