@@ -14,5 +14,13 @@
 }
 
 .blurred {
-    filter: blur(2px);
+    filter: blur(4px);
+}
+
+.sizeTable{
+    display: none;
+}
+
+.show{
+    display: flex;
 }

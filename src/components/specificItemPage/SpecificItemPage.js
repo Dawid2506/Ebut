@@ -14,15 +14,19 @@ function SpecificItemPage() {
   };
 
   return (
-    <div className={`specificItemPage ${isBlurred ? 'blurred' : ''}`}>
-      <Header />
-      <div className='specificItemPageCC'>
-        <div className='specificItemPageContatiner'>
-          <ImageVerticallyList />
-          <MainImage />
-          <SpecificInformation toggleBlur={toggleBlur} />
-          <SizeTable />
+    <div>
+      <div className={`specificItemPage ${isBlurred ? 'blurred' : ''}`}>
+        <Header />
+        <div className='specificItemPageCC'>
+          <div className='specificItemPageContatiner'>
+            <ImageVerticallyList />
+            <MainImage />
+            <SpecificInformation toggleBlur={toggleBlur} />
+          </div>
         </div>
+      </div>
+      <div className={`sizeTable ${isBlurred ? 'show' : ''}`}>
+        <SizeTable />
       </div>
     </div>
   );

@@ -4,8 +4,8 @@ import './SizeTable.scss';
 const SizeTable = () => {
 
     return (
-        <div className='SizeTableContainer'>
-            
+        <div className='SizeTableContainer noBlur'>
+            <p>sdadasd</p>
         </div>
     );
 };

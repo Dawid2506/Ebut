@@ -20,13 +20,15 @@
     margin-top: 1em;
 }
 
-.sizeTable{
+.specSizeTable{
     height: 3em;
     width: 8em;
     display: flex;
     align-items: center;
+    user-select: none;
+    cursor: pointer;
 }
 
-.sizeTable:hover{
+.specSizeTable:hover{
     background-color: #e8e8e8;
 }
