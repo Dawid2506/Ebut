@@ -1,0 +1,82 @@
+[
+    {
+      "_id": "65d5117a3d5c740bd1efd674",
+      "brand": "New Balance",
+      "model": "574",
+      "price": 249.99,
+      "availableSizes": [39, 40, 41, 42, 43, 47],
+      "__v": 0
+    },
+    {
+      "_id": "65d5117a3d5c740bd1efd67c",
+      "brand": "Lacoste",
+      "model": "Carnaby Evo",
+      "price": 249.99,
+      "availableSizes": [39, 40, 42, 43, 45],
+      "__v": 0
+    },
+    {
+      "_id": "65d511793d5c740bd1efd66c",
+      "brand": "Nike",
+      "model": "Air Max 90",
+      "price": 299.99,
+      "availableSizes": [35, 38, 40, 41, 42, 45],
+      "__v": 0
+    },
+    {
+      "_id": "65d5117a3d5c740bd1efd66e",
+      "brand": "Adidas",
+      "model": "Superstar",
+      "price": 199.99,
+      "availableSizes": [41, 42, 47],
+      "__v": 0
+    },
+    {
+      "_id": "65d5117a3d5c740bd1efd67e",
+      "brand": "Timberland",
+      "model": "6 Inch Premium Boot",
+      "price": 399.99,
+      "availableSizes": [39, 41, 45, 47],
+      "__v": 0
+    },
+    {
+      "_id": "65d5117a3d5c740bd1efd676",
+      "brand": "Vans",
+      "model": "Old Skool",
+      "price": 199.99,
+      "availableSizes": [40, 41, 42, 43, 44, 45, 46, 47],
+      "__v": 0
+    },
+    {
+      "_id": "65d5117a3d5c740bd1efd678",
+      "brand": "Converse",
+      "model": "Chuck Taylor All Star",
+      "price": 199.99,
+      "availableSizes": [42, 43, 44, 45, 46, 47],
+      "__v": 0
+    },
+    {
+      "_id": "65d5117a3d5c740bd1efd670",
+      "brand": "Puma",
+      "model": "RS-X",
+      "price": 249.99,
+      "availableSizes": [46, 47],
+      "__v": 0
+    },
+    {
+      "_id": "65d5117a3d5c740bd1efd672",
+      "brand": "Reebok",
+      "model": "Classic Leather",
+      "price": 199.99,
+      "availableSizes": [37, 38, 39, 40, 42, 44, 46, 47],
+      "__v": 0
+    },
+    {
+      "_id": "65d5117a3d5c740bd1efd67a",
+      "brand": "Fila",
+      "model": "Disruptor",
+      "price": 299.99,
+      "availableSizes": [41, 42, 45, 46, 47],
+      "__v": 0
+    }
+  ]

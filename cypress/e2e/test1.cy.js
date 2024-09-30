@@ -1,26 +1,85 @@
+// cypress/e2e/productList.cy.js
+
 describe('ProductList Component', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000'); // Odwiedź stronę
+    // Set up interceptor for API
+    cy.intercept('GET', 'http://localhost:5000/readFromItem', { fixture: 'products.json' }).as('getProducts');
+
+    // Open the application
+    cy.visit('http://localhost:3000');
   });
 
   it('should fetch and display products', () => {
-    // Czekaj, aż elementy produktów będą widoczne
-    cy.get('.items', { timeout: 10000 }).should('exist'); // Upewnij się, że kontener produktów istnieje
-    cy.get('.items > div', { timeout: 10000 }).should('have.length.greaterThan', 0); // Upewnij się, że jest co najmniej 1 element
+    // Wait for API response
+    cy.wait('@getProducts');
 
-    // Sprawdź, czy zawierają odpowiednie informacje
-    cy.get('.items > div').first().contains('New Balance'); // Sprawdź markę (dostosuj do Twoich danych)
-    cy.get('.items > div').eq(1).contains('Lacoste'); // Sprawdź markę (dostosuj do Twoich danych)
+    // Check if the number of elements is as expected
+    cy.get('.items > div').should('have.length', 10); // Should be 2 elements
+
+    // Check if the elements are rendered correctly
+    cy.get('.items > div').first().within(() => {
+      cy.contains('New Balance');
+      cy.contains('574');
+    });
+
+    cy.get('.items > div').last().within(() => {
+      cy.contains('Fila');
+      cy.contains('Disruptor');
+    });
   });
 
-  it('should handle API errors gracefully', () => {
-    // Aby sprawdzić błędy, możesz zmienić serwer na nieaktywny lub zmodyfikować endpoint w odpowiedni sposób
-    // Możesz także użyć mockowania, aby symulować błąd w inny sposób
-    // Dla tego przykładu nie używamy mockowania
-    cy.visit('http://localhost:3000'); // Odwiedź stronę
-    cy.get('.items').should('exist'); // Upewnij się, że kontener produktów istnieje
+  // it('should load products within acceptable time', () => {
+  //   cy.intercept('GET', 'http://localhost:5000/readFromItem', {
+  //     statusCode: 200,
+  //     body: Array.from({ length: 1000 }, (_, index) => ({
+  //       brand: `Brand ${index}`,
+  //       model: `Model ${index}`,
+  //       price: index + 100,
+  //       availableSizes: [39, 40, 41, 42, 43, 47],
+  //     }))
+  //   }).as('getLargeProducts');
 
-    // Weryfikacja, że produkty zostały załadowane
-    cy.get('.items > div', { timeout: 10000 }).should('have.length.greaterThan', 0); // Upewnij się, że jest co najmniej 1 element
-  });
+  //   cy.visit('http://localhost:3000');
+  //   cy.wait('@getLargeProducts');
+
+  //   // Measure loading time
+  //   const start = performance.now();
+  //   cy.get('.items > div').should('have.length', 1000);
+  //   const end = performance.now();
+  //   const loadTime = end - start;
+
+  //   expect(loadTime).to.be.lessThan(2000); // Set the loading time limit
+  // });
+
+  // it('should render a large number of products', () => {
+  //   cy.intercept('GET', 'http://localhost:5000/readFromItem', {
+  //     statusCode: 200,
+  //     body: Array.from({ length: 1000 }, (_, index) => ({
+  //       brand: `Brand ${index}`,
+  //       model: `Model ${index}`,
+  //       price: index + 100,
+  //       availableSizes: [39, 40, 41, 42, 43, 47],
+  //     }))
+  //   }).as('getLargeProducts');
+
+  //   cy.visit('http://localhost:3000');
+  //   cy.wait('@getLargeProducts');
+
+  //   // Sprawdź, czy liczba elementów jest zgodna z oczekiwaną
+  //   cy.get('.items > div').should('have.length', 1000);
+  // });
+
+  // it('should handle API errors gracefully', () => {
+  //   cy.intercept('GET', 'http://localhost:5000/readFromItem', {
+  //     statusCode: 500,
+  //     body: { message: 'Internal Server Error' }
+  //   }).as('getError');
+
+  //   cy.visit('http://localhost:3000');
+  //   cy.wait('@getError');
+
+  //   // Sprawdź, czy wyświetlany jest komunikat o błędzie
+  //   cy.contains('Error fetching data').should('be.visible');
+  // });
+
 });
