@@ -52,6 +52,7 @@
     "husky": "^9.1.6",
     "node-sass": "^9.0.0",
     "sass-loader": "^16.0.2",
-    "style-loader": "^4.0.0"
+    "style-loader": "^4.0.0",
+    "wait-on": "^8.0.1"
   }
 }
