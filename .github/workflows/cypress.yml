@@ -18,8 +18,11 @@ jobs:
         with:
           node-version: '20.x'
 
+      - name: Clean up Babel cache
+        run: rm -rf node_modules/.cache/babel-loader
+
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build the project
         run: npm run build
