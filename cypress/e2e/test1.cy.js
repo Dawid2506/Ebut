@@ -28,46 +28,47 @@ describe('ProductList Component', () => {
     });
   });
 
-  // it('should load products within acceptable time', () => {
-  //   cy.intercept('GET', 'http://localhost:5000/readFromItem', {
-  //     statusCode: 200,
-  //     body: Array.from({ length: 1000 }, (_, index) => ({
-  //       brand: `Brand ${index}`,
-  //       model: `Model ${index}`,
-  //       price: index + 100,
-  //       availableSizes: [39, 40, 41, 42, 43, 47],
-  //     }))
-  //   }).as('getLargeProducts');
+  it('should load products within acceptable time', () => {
+    cy.intercept('GET', 'http://localhost:5000/readFromItem', {
+      statusCode: 200,
+      body: Array.from({ length: 1000 }, (_, index) => ({
+        brand: `Brand ${index}`,
+        model: `Model ${index}`,
+        price: index + 100,
+        availableSizes: [39, 40, 41, 42, 43, 47],
+      }))
+    }).as('getLargeProducts');
 
-  //   cy.visit('http://localhost:3000');
-  //   cy.wait('@getLargeProducts');
+    cy.visit('http://localhost:3000');
+    cy.wait('@getLargeProducts');
+    cy.get('[data-test-id="test1"]').should('be.visible');
 
-  //   // Measure loading time
-  //   const start = performance.now();
-  //   cy.get('.items > div').should('have.length', 1000);
-  //   const end = performance.now();
-  //   const loadTime = end - start;
+    // Measure loading time
+    const start = performance.now();
+    cy.get('.items > div').should('have.length', 1000);
+    const end = performance.now();
+    const loadTime = end - start;
 
-  //   expect(loadTime).to.be.lessThan(2000); // Set the loading time limit
-  // });
+    expect(loadTime).to.be.lessThan(2000); // Set the loading time limit
+  });
 
-  // it('should render a large number of products', () => {
-  //   cy.intercept('GET', 'http://localhost:5000/readFromItem', {
-  //     statusCode: 200,
-  //     body: Array.from({ length: 1000 }, (_, index) => ({
-  //       brand: `Brand ${index}`,
-  //       model: `Model ${index}`,
-  //       price: index + 100,
-  //       availableSizes: [39, 40, 41, 42, 43, 47],
-  //     }))
-  //   }).as('getLargeProducts');
+  it('should render a large number of products', () => {
+    cy.intercept('GET', 'http://localhost:5000/readFromItem', {
+      statusCode: 200,
+      body: Array.from({ length: 1000 }, (_, index) => ({
+        brand: `Brand ${index}`,
+        model: `Model ${index}`,
+        price: index + 100,
+        availableSizes: [39, 40, 41, 42, 43, 47],
+      }))
+    }).as('getLargeProducts');
 
-  //   cy.visit('http://localhost:3000');
-  //   cy.wait('@getLargeProducts');
+    cy.visit('http://localhost:3000');
+    cy.wait('@getLargeProducts');
 
-  //   // Sprawdź, czy liczba elementów jest zgodna z oczekiwaną
-  //   cy.get('.items > div').should('have.length', 1000);
-  // });
+    // Sprawdź, czy liczba elementów jest zgodna z oczekiwaną
+    cy.get('.items > div').should('have.length', 1000);
+  });
 
   // it('should handle API errors gracefully', () => {
   //   cy.intercept('GET', 'http://localhost:5000/readFromItem', {
