@@ -28,7 +28,6 @@ const Item = (props) => {
         navigate('/specificItemPage');
     };
 
-    // Dodajemy funkcję, która zatrzymuje propagację zdarzenia kliknięcia
     const handleFavoriteClick = (event) => {
         event.stopPropagation();
     };

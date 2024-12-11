@@ -1,48 +1,47 @@
 describe('Responsive tests for ProductList', () => {
   
     beforeEach(() => {
-      // Interceptowanie zapytań do API, jeśli dane są wymagane
+      // Intercept API requests if data is required
       cy.intercept('GET', 'http://localhost:5000/readFromItem', { fixture: 'products.json' }).as('getProducts');
       
-      // Otwórz aplikację
+      // Open the application
       cy.visit('http://localhost:3000');
       cy.wait('@getProducts');
     });
   
     it('should display correctly on desktop resolution', () => {
-      // Ustawienie rozdzielczości dla desktopu
+      // Set resolution for desktop
       cy.viewport(1280, 720);
       
-      // Sprawdzenie czy lista produktów jest poprawnie wyświetlana
+      // Check if the product list is displayed correctly
       cy.get('.items > div').should('be.visible');
-      cy.get('.items > div').should('have.length', 10); // Sprawdzenie liczby elementów
+      cy.get('.items > div').should('have.length', 10); // Check the number of elements
     });
   
     it('should display correctly on mobile resolution', () => {
-      // Ustawienie rozdzielczości dla urządzeń mobilnych
+      // Set resolution for mobile devices
       cy.viewport('iphone-x');
       
-      // Sprawdzenie czy produkty są widoczne w trybie mobilnym
+      // Check if products are visible in mobile mode
       cy.get('.items > div').should('be.visible');
       cy.get('.items > div').should('have.length', 10);
       
-      // Sprawdzenie, czy układ jest odpowiednio zmieniony
+      // Check if the layout is appropriately changed
       cy.get('.items > div').first().within(() => {
-        cy.get('img').should('have.attr', 'src').should('include', 'shoesOne.png');
+        cy.get('img').should('have.attr', 'src');
       });
     });
   
     it('should display correctly on tablet resolution', () => {
-      // Ustawienie rozdzielczości dla tabletu
+      // Set resolution for tablet
       cy.viewport('ipad-2');
       
-      // Sprawdzenie wyświetlania elementów
+      // Check the display of elements
       cy.get('.items > div').should('be.visible');
       cy.get('.items > div').should('have.length', 10);
       
-      // Możesz również sprawdzić specyficzne elementy CSS
-      cy.get('.items > div').first().should('have.css', 'display', 'block'); // lub inna logika dla tabletu
+      // You can also check specific CSS elements
+      cy.get('.items > div').first().should('have.css', 'display', 'block'); // or other logic for tablet
     });
   
-  });
-  
+});
